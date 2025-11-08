@@ -1,1 +1,64 @@
 /*  your css code here. If applicable */
+body{
+	font-family:sans-serif;
+	padding:15px;
+	
+}
+button{
+	padding:5px;
+	cursor:pointer;
+	font-weight:bold;
+}
+.modal{
+	position:fixed;
+	z-index:1;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgba(0,0,0,0.2)
+}
+.modal:target{
+	display:block;
+}
+.modal-header{
+	padding:10px;
+	background-color:#007bff;
+	color:white;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+
+.modal-body{
+	padding:20px;
+	align-items:left;
+}
+.close-modal{
+	padding:5px;
+	cursor:pointer;
+	font-weight:bold;
+	font-size:21px;
+	color:white;
+	text-decoration:none;
+}
+@keyframes fadeIn{
+	from{opacity:0; transform:translateY(-20px);}
+	to{opacity:1;transform:translateY(0);}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
