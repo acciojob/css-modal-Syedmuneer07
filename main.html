@@ -1,30 +1,100 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modal Without JS</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+  }
 
+  #openModal {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal:target {
+    display: block;
+  }
+  .modal-content {
+    position: relative;
+    background: white;
+    width: 50%;
+    max-width: 500px;
+    margin: 10% auto;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .modal-header {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .close-modal {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .modal:target .modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+</style>
+</head>
 <body>
-	<!-- the entire body must be written by student -->
-	<button id="openModal">Open Modal</button>
-	<div class="modal" id="myModal">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h2>Modal Header</h2>
-				<span class="close-modal">&times;</span>
-			</div>
-			<div class="modal-body">
-				<p>Modal Body Content</p>
-			</div>
-			
-		</div>
-		
-	</div>
-    <script type="text/javascript" src="./script.js">
-</script>
+ 
+<a href="#myModal" id="openModal">Open Modal</a>
+
+<div id="myModal" class="modal">
+  <a href="#" class="modal-overlay"></a> <!-- Click outside to close -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Modal Header</h2>
+      <a href="#" class="close-modal">&times;</a>
+    </div>
+    <div class="modal-body">
+      <p>Modal Body Content</p>
+    </div>
+  </div>
+</div>
 
 </body>
-
 </html>
